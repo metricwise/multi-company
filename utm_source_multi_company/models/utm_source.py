@@ -7,14 +7,6 @@ from odoo import fields, models
 class UtmSource(models.Model):
     _inherit = "utm.source"
 
-    _sql_constraints = [
-        (
-            "unique_name",
-            "UNIQUE(name, company_id)",
-            "The name must be unique per company",
-        ),
-    ]
-
     company_id = fields.Many2one(
         "res.company",
         "Company",
